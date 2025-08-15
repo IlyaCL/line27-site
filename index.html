@@ -4,13 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LINE‑27 — a machine diary</title>
-<meta name="description" content="Robots document their own city; we peek into logs. A tender, rigorous techno‑utopia: invariants, quorums, a Museum of Errors.">
+<meta name="description" content="Robots document their own city; we peek into logs. A tender, rigorous techno‑utopia: invariants, quorums, and a Museum of Errors.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="og_line27_en.png">
+<meta name="theme-color" content="#0d1016">
 <meta property="og:title" content="LINE‑27 — a machine diary">
 <meta property="og:description" content="A machine diary of a Martian fork‑city: invariants, quorums, and a Museum of Errors.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="og_line27_en.png">
+<meta property="og:image" content="og_line27_en.png?v=3">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWorkSeries",
+  "name": "LINE-27 — a machine diary",
+  "inLanguage": "en",
+  "abstract": "Robots document their own city; we peek into logs. A tender, rigorous techno‑utopia.",
+  "isAccessibleForFree": true,
+  "url": "https://ilyacl.github.io/line27-site/"
+}
+</script>
 <style>
 :root{--bg:#0d1016;--fg:#eaf2ff;--muted:#a6b3c3;--accent:#67e8f9;--line:#212938}
 *{box-sizing:border-box} body{margin:0;background:#0d1016;color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
@@ -22,85 +35,92 @@ a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
 @media (max-width:640px){.ru-corner{display:none}}
 .hero{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;padding:34px 0}
 @media (max-width:960px){.hero{grid-template-columns:1fr}}
-.logo{background:#0e1218;border:1px solid #222b3a;border-radius:18px;padding:20px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.02)}
+.logo{background:#0e1218;border:1px solid #222b3a;border-radius:18px;padding:20px}
 h1{font-size:44px;line-height:1.15;margin:10px 0 12px}
 p.lede{color:var(--muted);font-size:18px}
 .tags{margin:8px 0 16px;display:flex;flex-wrap:wrap;gap:10px}
 .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#0c121b;border:1px solid #243041;color:var(--muted);font-size:13px}
 .btns{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-block;background:var(--accent);color:#041016;padding:10px 14px;border-radius:12px;font-weight:700}
+.btn{display:inline-block;background:var(--accent);color:#041016;padding:10px 14px;border-radius:12px;font-weight:700;outline-offset:2px}
 .btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
 .card{background:#0e141d;border:1px solid #222b3a;border-radius:16px;padding:16px}
 .card h2{margin:6px 0 10px;font-size:22px}
-.list{padding-left:16px;margin:0}
-.list li{margin:8px 0}
+.list{padding-left:16px;margin:0} .list li{margin:8px 0}
 .footer{color:var(--muted);text-align:center;padding:32px 0}
+.skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip:focus{left:16px;top:8px;width:auto;height:auto;background:#041016;color:#fff;padding:6px 10px;border-radius:8px}
 </style>
 </head>
 <body>
-<div class="ru-corner">ЛИНИЯ‑27<small style="color:#a6b3c3;display:block">дневник машины</small></div>
-<div class="container">
-  <div class="header">
+<a class="skip" href="#main">Skip to content</a>
+<div class="ru-corner" aria-label="Russian accent">ЛИНИЯ‑27<small style="color:#a6b3c3;display:block">дневник машины</small></div>
+<div class="container" id="top">
+  <div class="header" role="banner">
     <div class="badge">LINE‑27</div>
-    <div class="badge">Season One</div>
+    <nav aria-label="quick"><a class="badge" href="#press">Press</a></nav>
   </div>
 
-  <section class="hero">
-    <div class="logo" aria-label="LINE‑27 wordmark card">
-      <img src="og_line27_en.png" alt="We are a city that learns out loud" style="width:100%;height:auto;border-radius:12px">
-    </div>
-    <div>
-      <div class="tags">
-        <span class="tag">machine diary</span><span class="tag">Martian fork‑city</span><span class="tag">Museum of Errors</span>
+  <main id="main">
+    <section class="hero" aria-label="hero">
+      <div class="logo" aria-label="LINE‑27 card image">
+        <img src="og_line27_en.png?v=3" alt="We are a city that learns out loud — LINE‑27" style="width:100%;height:auto;border-radius:12px">
       </div>
-      <h1>We are a city that learns out loud</h1>
-      <p class="lede">Here, heroics lose to reversibility — and errors become exhibits.</p>
-      <div class="btns">
-        <a class="btn" href="Line27_Season1_EN.pdf" download>Season One (EN, PDF)</a>
-        <a class="btn ghost" href="L27_teaser_90sec_en.md" download>Teaser (90s)</a>
-        <a class="btn ghost" href="L27_one_pager_en.md" download>One‑pager</a>
+      <div>
+        <div class="tags"><span class="tag">machine diary</span><span class="tag">Martian fork‑city</span><span class="tag">Museum of Errors</span></div>
+        <h1>We are a city that learns out loud</h1>
+        <p class="lede">Here, heroics lose to <strong>reversibility</strong> — and errors become exhibits.</p>
+        <div class="btns">
+          <a class="btn" href="Line27_Season1_EN.pdf" download>Season One (EN, PDF)</a>
+          <a class="btn ghost" href="L27_teaser_90sec_en.md" download>Teaser (90s)</a>
+          <a class="btn ghost" href="L27_one_pager_en.md" download>One‑pager</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="grid">
-    <div class="card">
-      <h2>Chapters (open PDF)</h2>
-      <ul class="list">
-        <li><a href="Line27_Season1_EN.pdf">1 — Opening Day</a></li>
-        <li><a href="Line27_Season1_EN.pdf">2 — Honest Court</a></li>
-        <li><a href="Line27_Season1_EN.pdf">3 — Fork‑Festival</a></li>
-        <li><a href="Line27_Season1_EN.pdf">4 — Energy Market</a></li>
-        <li><a href="Line27_Season1_EN.pdf">5 — Night Defrag</a></li>
-        <li><a href="Line27_Season1_EN.pdf">6 — Contract Rite</a></li>
-        <li><a href="Line27_Season1_EN.pdf">7 — Birth of a Branch</a></li>
-        <li><a href="Line27_Season1_EN.pdf">8 — Expedition</a></li>
-        <li><a href="Line27_Season1_EN.pdf">9 — Fewer Privileges</a></li>
-        <li><a href="Line27_Season1_EN.pdf">10 — Museum Grand Exhibition</a></li>
-        <li><a href="Line27_Season1_EN.pdf">11 — Constitution Update Rite</a></li>
-        <li><a href="Line27_Season1_EN.pdf">12 — Saying No to a Contract</a></li>
-        <li><a href="Line27_Season1_EN.pdf">13 — Memory Hand‑off</a></li>
-      </ul>
-    </div>
+    <section class="grid" aria-label="chapters and press">
+      <div class="card">
+        <h2>Chapters (open PDF)</h2>
+        <ul class="list">
+          <li><a href="Line27_Season1_EN.pdf">1 — Opening Day</a></li>
+          <li><a href="Line27_Season1_EN.pdf">2 — Honest Court</a></li>
+          <li><a href="Line27_Season1_EN.pdf">3 — Fork‑Festival</a></li>
+          <li><a href="Line27_Season1_EN.pdf">4 — Energy Market</a></li>
+          <li><a href="Line27_Season1_EN.pdf">5 — Night Defrag</a></li>
+          <li><a href="Line27_Season1_EN.pdf">6 — Contract Rite</a></li>
+          <li><a href="Line27_Season1_EN.pdf">7 — Birth of a Branch</a></li>
+          <li><a href="Line27_Season1_EN.pdf">8 — Expedition</a></li>
+          <li><a href="Line27_Season1_EN.pdf">9 — Fewer Privileges</a></li>
+          <li><a href="Line27_Season1_EN.pdf">10 — Museum Grand Exhibition</a></li>
+          <li><a href="Line27_Season1_EN.pdf">11 — Constitution Update Rite</a></li>
+          <li><a href="Line27_Season1_EN.pdf">12 — Saying No to a Contract</a></li>
+          <li><a href="Line27_Season1_EN.pdf">13 — Memory Hand‑off</a></li>
+        </ul>
+      </div>
 
-    <div class="card">
-      <h2>Press kit</h2>
-      <ul class="list">
-        <li><a href="L27_press_release_en.md" download>Press release</a></li>
-        <li><a href="L27_one_pager_en.md" download>One‑pager</a></li>
-        <li><a href="L27_teaser_90sec_en.md" download>90s teaser</a></li>
-      </ul>
-    </div>
+      <div class="card" id="press">
+        <h2>Press kit</h2>
+        <ul class="list">
+          <li><a href="L27_press_release_en.md" download>Press release</a></li>
+          <li><a href="L27_series_bible_outline_en.md" download>Series bible outline</a></li>
+          <li><a href="L27_trailer_45sec_ru_en.md" download>45s trailer script (RU/EN)</a></li>
+          <li><a href="L27_poster_briefs_ru_en.md" download>Poster briefs (RU/EN)</a></li>
+          <li><a href="L27_social_pack_en.txt" download>Social pack</a></li>
+          <li><a href="L27_one_pager_en.md" download>One‑pager</a></li>
+          <li><a href="L27_teaser_90sec_en.md" download>90s teaser</a></li>
+        </ul>
+      </div>
 
-    <div class="card">
-      <h2>Contact</h2>
-      <p class="muted">Email alias (edit in HTML): <strong>line27@proton.me</strong></p>
-      <small class="muted">Change this to your actual alias by editing <code>index.html</code>.</small>
-    </div>
-  </section>
+      <div class="card">
+        <h2>Contact</h2>
+        <p class="muted">Email alias: <a href="mailto:line27@proton.me">line27@proton.me</a></p>
+        <small class="muted">To change this address, edit <code>index.html</code> — search for "email_alias".</small>
+      </div>
+    </section>
+  </main>
 
   <div class="footer">© LINE‑27 — a machine diary.</div>
 </div>
+
 </body>
 </html>
