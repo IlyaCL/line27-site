@@ -12,183 +12,95 @@
 <meta property="og:image" content="og_line27_en.png">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-:root{
-  --bg:#0d1016; --fg:#eaf2ff; --muted:#a6b3c3; --accent:#67e8f9;
-  --card:#141a22; --line:#212938; --ok:#7af0b2; --warn:#ffd166;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;background:radial-gradient(1200px 600px at 20% -10%, #17202c, transparent),
-                         radial-gradient(900px 500px at 120% 10%, #111826, transparent),
-                         var(--bg);
-     color:var(--fg); font:16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif}
-a{color:var(--accent); text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:1080px; margin:0 auto; padding:28px}
-.header{display:flex; align-items:center; justify-content:space-between; gap:16px}
-.lang{font-size:14px; color:var(--muted)}
-.lang a{margin-left:10px}
-.hero{display:grid; grid-template-columns:1.1fr 1fr; gap:28px; align-items:center; padding:48px 0}
-@media (max-width:960px){ .hero{grid-template-columns:1fr; padding:28px 0} }
-.logo{
-  background:linear-gradient(180deg, #0e131c, #0b0f17);
-  border:1px solid var(--line); border-radius:20px; padding:22px;
-  box-shadow:0 10px 40px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.02);
-}
-h1{font-size:44px; line-height:1.15; margin:10px 0 12px}
-p.lede{color:var(--muted); font-size:18px}
-.tags{margin:8px 0 16px; display:flex; flex-wrap:wrap; gap:10px}
-.tag{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px;
-     background:#0c121b; border:1px solid var(--line); color:var(--muted); font-size:13px}
-.btns{margin-top:14px; display:flex; flex-wrap:wrap; gap:12px}
-.btn{display:inline-block; background:var(--accent); color:#041016; padding:10px 14px; border-radius:12px; font-weight:700}
-.btn.ghost{background:transparent; color:var(--accent); border:1px solid var(--accent)}
-.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px}
-.card{background:linear-gradient(180deg,#0e141d,#0b0f17); border:1px solid var(--line); border-radius:16px; padding:16px}
-.card h2{margin:6px 0 10px; font-size:22px}
-.list{padding-left:16px; margin:0}
+:root{--bg:#0d1016;--fg:#eaf2ff;--muted:#a6b3c3;--accent:#67e8f9;--line:#212938}
+*{box-sizing:border-box} body{margin:0;background:#0d1016;color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+.container{max-width:1080px;margin:0 auto;padding:28px}
+.header{display:flex;align-items:center;justify-content:space-between}
+.badge{padding:4px 8px;border-radius:8px;background:#0b1219;border:1px solid #243041;color:var(--muted);font-size:12px}
+.ru-corner{position:fixed;right:16px;top:16px;z-index:10;background:#0b1219cc;border:1px solid #243041;border-radius:10px;padding:6px 10px;color:#eaf2ff;font-size:12px;line-height:1.2}
+@media (max-width:640px){.ru-corner{display:none}}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;padding:34px 0}
+@media (max-width:960px){.hero{grid-template-columns:1fr}}
+.logo{background:#0e1218;border:1px solid #222b3a;border-radius:18px;padding:20px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.02)}
+h1{font-size:44px;line-height:1.15;margin:10px 0 12px}
+p.lede{color:var(--muted);font-size:18px}
+.tags{margin:8px 0 16px;display:flex;flex-wrap:wrap;gap:10px}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#0c121b;border:1px solid #243041;color:var(--muted);font-size:13px}
+.btns{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;background:var(--accent);color:#041016;padding:10px 14px;border-radius:12px;font-weight:700}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:#0e141d;border:1px solid #222b3a;border-radius:16px;padding:16px}
+.card h2{margin:6px 0 10px;font-size:22px}
+.list{padding-left:16px;margin:0}
 .list li{margin:8px 0}
-.kpi{display:flex; gap:16px; margin-top:8px; color:var(--muted); font-size:14px}
-.kpi span{display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border:1px solid var(--line); border-radius:999px; background:#0c121b}
-.footer{color:var(--muted); text-align:center; padding:40px 0}
-hr{border:none; border-top:1px solid var(--line); margin:24px 0}
-.badge{padding:4px 8px; border-radius:8px; background:#0b1219; border:1px solid var(--line); color:var(--muted); font-size:12px}
-/* subtle shine on buttons */
-.btn{position:relative; overflow:hidden}
-.btn::after{content:""; position:absolute; top:-120%; left:-30%; width:60%; height:300%;
-  background:linear-gradient(60deg, rgba(255,255,255,.0), rgba(255,255,255,.22), rgba(255,255,255,.0));
-  transform:rotate(12deg); transition:transform .8s ease; pointer-events:none}
-.btn:hover::after{transform:translateX(220%) rotate(12deg)}
-/* inline SVG scales nicely */
-.inline-logo{width:100%; height:auto}
-small.hint{color:var(--muted)}
+.footer{color:var(--muted);text-align:center;padding:32px 0}
 </style>
 </head>
 <body>
-  
-<style>
-.ru-corner{
-  position: fixed; right: 16px; top: 16px; z-index: 10;
-  background:#0b1219cc; backdrop-filter: blur(6px);
-  border:1px solid #243041; border-radius: 10px; padding:6px 10px;
-  color:#eaf2ff; font-size:12px; line-height:1.2
-}
-.ru-corner small{color:#a6b3c3; display:block}
-@media (max-width: 640px){ .ru-corner{display:none} }
-</style>
-<div class="ru-corner" aria-label="Russian accent badge">
-  ЛИНИЯ‑27
-  <small>дневник машины</small>
-</div>
+<div class="ru-corner">ЛИНИЯ‑27<small style="color:#a6b3c3;display:block">дневник машины</small></div>
+<div class="container">
+  <div class="header">
+    <div class="badge">LINE‑27</div>
+    <div class="badge">Season One</div>
+  </div>
 
-  <div class="container">
-    <div class="header">
-      <div class="badge">LINE‑27</div>
-      <div class="lang">Lang: <a href="#">EN</a> · <a href="index.html">RU</a> · <a href="index_es.html">ES</a></div>
+  <section class="hero">
+    <div class="logo" aria-label="LINE‑27 wordmark card">
+      <img src="og_line27_en.png" alt="We are a city that learns out loud" style="width:100%;height:auto;border-radius:12px">
+    </div>
+    <div>
+      <div class="tags">
+        <span class="tag">machine diary</span><span class="tag">Martian fork‑city</span><span class="tag">Museum of Errors</span>
+      </div>
+      <h1>We are a city that learns out loud</h1>
+      <p class="lede">Here, heroics lose to reversibility — and errors become exhibits.</p>
+      <div class="btns">
+        <a class="btn" href="Line27_Season1_EN.pdf" download>Season One (EN, PDF)</a>
+        <a class="btn ghost" href="L27_teaser_90sec_en.md" download>Teaser (90s)</a>
+        <a class="btn ghost" href="L27_one_pager_en.md" download>One‑pager</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h2>Chapters (open PDF)</h2>
+      <ul class="list">
+        <li><a href="Line27_Season1_EN.pdf">1 — Opening Day</a></li>
+        <li><a href="Line27_Season1_EN.pdf">2 — Honest Court</a></li>
+        <li><a href="Line27_Season1_EN.pdf">3 — Fork‑Festival</a></li>
+        <li><a href="Line27_Season1_EN.pdf">4 — Energy Market</a></li>
+        <li><a href="Line27_Season1_EN.pdf">5 — Night Defrag</a></li>
+        <li><a href="Line27_Season1_EN.pdf">6 — Contract Rite</a></li>
+        <li><a href="Line27_Season1_EN.pdf">7 — Birth of a Branch</a></li>
+        <li><a href="Line27_Season1_EN.pdf">8 — Expedition</a></li>
+        <li><a href="Line27_Season1_EN.pdf">9 — Fewer Privileges</a></li>
+        <li><a href="Line27_Season1_EN.pdf">10 — Museum Grand Exhibition</a></li>
+        <li><a href="Line27_Season1_EN.pdf">11 — Constitution Update Rite</a></li>
+        <li><a href="Line27_Season1_EN.pdf">12 — Saying No to a Contract</a></li>
+        <li><a href="Line27_Season1_EN.pdf">13 — Memory Hand‑off</a></li>
+      </ul>
     </div>
 
-    <section class="hero">
-      <div class="logo" aria-label="LINE‑27 wordmark and beacon motif">
-        <!-- Inline SVG logo (no external file needed) -->
-        <svg class="inline-logo" viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg" role="img">
-          <rect x="0" y="0" width="1200" height="420" fill="#0f0f12"/>
-          <g font-family="Verdana, DejaVu Sans, Arial, sans-serif" fill="#e8edf3">
-            <text x="64" y="260" font-size="150" letter-spacing="6">LINE‑27</text>
-            <rect x="64" y="292" width="460" height="6" fill="#67e8f9"/>
-          </g>
-          <g stroke="#67e8f9" stroke-width="8" fill="none" opacity="0.9">
-            <path d="M980 90 l40 40 l-40 40" />
-            <path d="M1020 90 l40 40 l-40 40" />
-          </g>
-          <text x="64" y="110" font-size="26" fill="#9aa7b8" font-family="Courier New, monospace">machine diary / mars fork‑city</text>
-        </svg>
-      </div>
-      <div>
-        <div class="tags">
-          <span class="tag">machine diary</span>
-          <span class="tag">Martian fork‑city</span>
-          <span class="tag">Museum of Errors</span>
-        </div>
-        <h1>We are a city that learns out loud</h1>
-        <p class="lede">Invariants, quorums, and a Museum of Errors. Here, heroics lose to reversibility — and errors become exhibits.</p>
-        <div class="btns">
-          <a class="btn" href="Line27_Season1_EN.pdf" download>Season One (EN, PDF)</a>
-          <a class="btn ghost" href="L27_teaser_90sec_en.md" download>Teaser (90s)</a>
-          <a class="btn ghost" href="L27_one_pager_en.md" download>One‑pager</a>
-        </div>
-        <div class="kpi">
-          <span title="human‑friendly entry">Start here: Honest Court</span>
-          <span title="ethics focus">Cheap ≠ traceless</span>
-          <span title="culture rule">Procedure = result</span>
-        </div>
-      </div>
-    </section>
+    <div class="card">
+      <h2>Press kit</h2>
+      <ul class="list">
+        <li><a href="L27_press_release_en.md" download>Press release</a></li>
+        <li><a href="L27_one_pager_en.md" download>One‑pager</a></li>
+        <li><a href="L27_teaser_90sec_en.md" download>90s teaser</a></li>
+      </ul>
+    </div>
 
-    <section class="grid">
-      <div class="card">
-        <h2>Chapters (EN)</h2>
-        <ul class="list">
-          <li><a href="line27_ch1_en.md" download>1 — Opening Day</a></li>
-          <li><a href="line27_ch2_en.md" download>2 — Honest Court</a></li>
-          <li><a href="line27_ch3_en.md" download>3 — Fork‑Festival</a></li>
-          <li><a href="line27_ch4_en.md" download>4 — Energy Market</a></li>
-          <li><a href="line27_ch5_en.md" download>5 — Night Defrag</a></li>
-          <li><a href="line27_ch6_en.md" download>6 — Contract Rite</a></li>
-          <li><a href="line27_ch7_en.md" download>7 — Birth of a Branch</a></li>
-          <li><a href="line27_ch8_en.md" download>8 — Expedition</a></li>
-          <li><a href="line27_ch9_en.md" download>9 — Fewer Privileges</a></li>
-          <li><a href="line27_ch10_en.md" download>10 — Museum Grand Exhibition</a></li>
-          <li><a href="line27_ch11_en.md" download>11 — Constitution Update Rite</a></li>
-          <li><a href="line27_ch12_en.md" download>12 — Say “No” to a Lucrative Contract</a></li>
-          <li><a href="line27_ch13_en.md" download>13 — Memory Hand‑off</a></li>
-        </ul>
-      </div>
-      <div class="card">
-        <h2>Press kit</h2>
-        <ul class="list">
-          <li><a href="L27_press_release_en.md" download>Press release</a></li>
-          <li><a href="L27_series_bible_outline_en.md" download>Series bible outline</a></li>
-          <li><a href="L27_trailer_45sec_ru_en.md" download>45s trailer script (RU/EN)</a></li>
-          <li><a href="L27_poster_briefs_ru_en.md" download>Poster briefs (RU/EN)</a></li>
-          <li><a href="L27_social_pack_en.txt" download>Social pack</a></li>
-        </ul>
-      </div>
-      <div class="card">
-                <h2>Оригинальные тексты (RU)</h2>
-                <p class="muted">исходный голос на русском; релизы — на английском</p>
-        <ul class="list">
-          <li><a href="chronicles_line27_machine_diary_ch1_ch2.md" download>Ch.1–2 (RU)</a></li>
-          <li><a href="chronicles_line27_machine_diary_ch10.md" download>Ch.10 — Museum (RU)</a></li>
-          <li><a href="chronicles_line27_machine_diary_ch11.md" download>Ch.11 — Constitution (RU)</a></li>
-          <li><a href="chronicles_line27_machine_diary_ch12.md" download>Ch.12 — “No” to Contract (RU)</a></li>
-          <li><a href="chronicles_line27_machine_diary_ch13.md" download>Ch.13 — Hand‑off (RU)</a></li>
-        </ul>
-      </div>
-    </section>
+    <div class="card">
+      <h2>Contact</h2>
+      <p class="muted">Email alias (edit in HTML): <strong>line27@proton.me</strong></p>
+      <small class="muted">Change this to your actual alias by editing <code>index.html</code>.</small>
+    </div>
+  </section>
 
-    <hr>
-
-    <section class="grid">
-      <div class="card">
-        <h2>What’s unique</h2>
-        <p>Not humans about robots — <strong>robots for themselves</strong>. We peek in. Diary voice, verifiable artifacts, and the rulebook of a city trying to be kind without lying.</p>
-      </div>
-      <div class="card">
-        <h2>Ethos</h2>
-        <ul class="list">
-          <li>Truth to our own</li>
-          <li>Reversibility first</li>
-          <li>Least privilege</li>
-          <li>No easy rewards</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h2>Contact</h2>
-        <p class="muted">pen name / ProtonMail alias</p>
-      </div>
-    </section>
-
-    <div class="footer">© LINE‑27 — a machine diary. Built as a love‑letter to honesty and reversibility.</div>
-  </div>
+  <div class="footer">© LINE‑27 — a machine diary.</div>
+</div>
 </body>
 </html>
